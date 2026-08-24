@@ -76,7 +76,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
 .plbl{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--t3);white-space:nowrap}
 
 /* CONFIG BODY */
-.cw{flex:1;padding:48px;padding-bottom:120px;max-width:1080px;margin:0 auto;width:100%}
+.cw{flex:1;display:flex;flex-direction:column;justify-content:center;padding:48px;padding-bottom:120px;max-width:1080px;margin:0 auto;width:100%}
 .step-no{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gd);margin-bottom:10px;font-weight:500}
 .step-q{font-family:var(--serif);font-size:clamp(24px,3.5vw,42px);line-height:1.05;letter-spacing:-1px;margin-bottom:6px}
 .step-hint{font-size:13px;color:var(--t3);margin-bottom:28px}
@@ -914,6 +914,11 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0; margin-top: 1px;
 }
+.gps-n.gps-n-alt {
+  background: transparent; border: 1.5px dashed var(--border2); color: var(--t3);
+  font-size: 13px; font-weight: 400;
+}
+.gps-step.gps-step-alt { color: var(--t3); }
 .gps-drop {
   display: flex; flex-direction: column; align-items: center;
   justify-content: center; gap: 8px;
@@ -1836,7 +1841,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
 
     <!-- ══ AKČNÍ TLAČÍTKA ════════════════════════════════════ -->
     <div class="r-acts">
-      <button class="btn-sec" onclick="startConfig()"><span id="bRestart">Začít znovu</span></button>
+      <button class="btn-sec" onclick="restartFlow()"><span id="bRestart">Začít znovu</span></button>
       <button class="btn-go" onclick="openCRM()">
         <span id="bTD">Domluvit Infinite Test Drive</span>
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -3391,6 +3396,9 @@ var EASY_STEPS=[
   ]},
 ];
 
+function restartFlow(){
+  if(easyMode) startEasy(); else startConfig();
+}
 function startEasy(){
   trackEvent('mode_start',{mode:'easy'});
   easyCur=0; easySel={}; easyMode=true;
@@ -3485,6 +3493,7 @@ function easyFinish(){
 
 function startConfig(){
   trackEvent('mode_start',{mode:'full'});
+  easyMode=false;
   cur=0; freeText=''; surpriseA={};
   STEPS.forEach(function(s){sel[s.id]=[];});
   show('pgConfig');
