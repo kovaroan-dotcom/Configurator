@@ -3723,6 +3723,21 @@ function parseFreeText(){
   };
 }
 
+function modelMinPrice(m){
+  return parseInt((m.price||'').replace(/[^\d]/g,''),10)||0;
+}
+function budgetCeiling(){
+  if(!easyMode) return null;
+  var eb=easySel['e-budget'];
+  if(eb==='low') return 500000;
+  if(eb==='mid') return 1000000;
+  return null;
+}
+function rankedModels(){
+  var ceiling=budgetCeiling();
+  var pool=ceiling?MODELS.filter(function(m){return modelMinPrice(m)<=ceiling;}):MODELS;
+  return pool.slice().sort(function(a,b){return score(b)-score(a);}).slice(0,3);
+}
 function score(m){
   var n=m.name;
   var total=0;
@@ -4561,7 +4576,7 @@ function getTrimUpsell(m,recIdx){
 function selectTrim(btn, modelIdx, trimIdx){
   var card = btn.closest ? btn.closest('.mc') : null;
   if(!card) return;
-  var ranked = MODELS.slice().sort(function(a,b){return score(b)-score(a);}).slice(0,3);
+  var ranked = window._lastRanked||rankedModels();
   window._lastRanked = ranked;
   var m = ranked[modelIdx];
   if(!m || !m.trims || !m.trims[trimIdx]) return;
@@ -4790,7 +4805,7 @@ function buildAccBlock(m, mi){
 function toggleAcc(mi, id){
   if(!accSel[mi]) accSel[mi]={};
   accSel[mi][id] = !accSel[mi][id];
-  var ranked = MODELS.slice().sort(function(a,b){return score(b)-score(a);}).slice(0,3);
+  var ranked = window._lastRanked||rankedModels();
   var m = (mi==='g') ? ranked[0] : ranked[+mi];
   if(!m) m = ranked[0];
   var el = document.getElementById('acc-'+mi);
@@ -5086,7 +5101,7 @@ function toggleServ(mi,id){
   if(!servSel[mi]) servSel[mi]={};
   servSel[mi][id]=!servSel[mi][id];
   // Re-render shared serv section
-  var ranked=MODELS.slice().sort(function(a,b){return score(b)-score(a);}).slice(0,3);
+  var ranked=window._lastRanked||rankedModels();
   buildSharedSections(ranked);
 }
 
@@ -5218,7 +5233,7 @@ function buildUsedPanel(m, lang, showInfo, mi){
   '</div>';
 }
 function buildResults(){
-  var ranked=MODELS.slice().sort(function(a,b){return score(b)-score(a);}).slice(0,3);
+  var ranked=rankedModels();
   window._lastRanked=ranked;
   trackEvent('results_view',{mode:easyMode?'easy':'full',models:ranked.map(function(m){return m.name;})});
   var _vbEl=document.getElementById('vbTxt');
@@ -5446,7 +5461,7 @@ function imgErr(img){
 }
 function openCRM(){
   buildScenarios();
-  var ranked=window._lastRanked||MODELS.slice().sort(function(a,b){return score(b)-score(a);}).slice(0,3);
+  var ranked=window._lastRanked||rankedModels();
   var msel=document.getElementById('iModel');
   if(msel) msel.innerHTML=ranked.map(function(m){return '<option>Škoda '+m.name+'</option>';}).join('');
   document.getElementById('crmOk').style.display='none';
@@ -5645,7 +5660,7 @@ function resetVision(){
 
 
 function updateDealerSheet(){
-  var ranked = MODELS.slice().sort(function(a,b){return score(b)-score(a);}).slice(0,3);
+  var ranked = window._lastRanked||rankedModels();
   var ds = buildDealerSheet(ranked);
   var el = document.getElementById('dealerSheet');
   if(el) el.textContent = ds;
