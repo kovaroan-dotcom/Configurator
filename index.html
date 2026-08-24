@@ -5,6 +5,21 @@
 <meta name="description" content="Simply Škoda — online konfigurátor, který vám za 3 minuty doporučí správný model Škoda podle vašeho životního stylu.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simply Škoda, Simply You</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMwZTNhMmYiLz48dGV4dCB4PSIzMiIgeT0iNDUiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI5MDAiIGZvbnQtc2l6ZT0iMzgiIGZpbGw9IiM3OGZhYWUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPiYjMzUyOzwvdGV4dD48L3N2Zz4=">
+
+<!-- Open Graph — náhled při sdílení na WhatsApp/Facebook/LinkedIn -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Simply Škoda">
+<meta property="og:title" content="Simply Škoda, Simply You">
+<meta property="og:description" content="Konfigurátor v lidské řeči. Řekněte nám svůj příběh, my doporučíme správný model Škoda — bez technických otázek.">
+<meta property="og:locale" content="cs_CZ">
+<!-- Až bude appka nasazená na vlastní doméně, doplňte og:url a og:image (branded náhledový obrázek, ideálně 1200×630 px). -->
+
+<!-- Twitter/X Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Simply Škoda, Simply You">
+<meta name="twitter:description" content="Konfigurátor v lidské řeči. Řekněte nám svůj příběh, my doporučíme správný model Škoda — bez technických otázek.">
+
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -110,29 +125,17 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
 .lfill{height:100%;background:var(--green);width:0%;transition:width .3s}
 
 /* RESULTS */
-.rw{flex:1;padding:56px 48px;max-width:1080px;margin:0 auto;width:100%}
-.r-ey{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gd);margin-bottom:10px;font-weight:500}
-.r-ti{font-family:var(--serif);font-size:clamp(26px,4vw,48px);line-height:1.05;letter-spacing:-1px;margin-bottom:8px}
 .r-su{font-size:14px;color:var(--t3);font-weight:300;max-width:520px;line-height:1.75;margin-bottom:36px}
-.vbox{background:var(--white);border:1px solid var(--border);border-left:3px solid var(--green);padding:30px 34px;margin-bottom:36px}
-.vb-lbl{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gd);margin-bottom:10px;font-weight:500}
-.vb-txt{font-family:var(--serif);font-size:clamp(15px,1.8vw,19px);font-style:italic;color:var(--t1);line-height:1.75}
-.mc-col{display:contents;}
-.mc-col .mc{}
-.mc-col{display:flex;flex-direction:column;gap:8px;}
-.mc-col-best .mc:first-child{border-color:var(--gd) !important;}
-.mc-col-best .mc-cfg{border-color:var(--gd) !important;border-top-color:rgba(120,250,174,.3) !important;}
 .mc-cfg .mbody{padding-top:14px;}
-.mc{background:var(--white);display:flex;flex-direction:column;position:relative}
 .mc:hover{background:var(--card)}
 .mc.best{outline:2px solid var(--green);outline-offset:-2px;z-index:1}
 .mphoto{height:170px;overflow:hidden;background:var(--card);border-bottom:1px solid var(--border);position:relative}
-.mphoto img{width:100%;height:100%;object-fit:cover;display:block}
 .best-badge{position:absolute;top:10px;left:10px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#fff;background:var(--gd);padding:4px 10px;font-weight:500}
-.mbody{padding:18px 18px 14px;flex:1;display:flex;flex-direction:column}
 .mn{font-family:var(--serif);font-size:19px;color:var(--t1);margin-bottom:2px}
 .mv{font-size:11px;color:var(--t3);margin-bottom:8px}
 .mseg{display:inline-block;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:2px 7px;border:1px solid var(--border);color:var(--t3);margin-bottom:10px}
+.colour-badge{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--t3);margin:0 0 10px}
+.colour-dot{width:10px;height:10px;border-radius:50%;border:1px solid rgba(0,0,0,.15);flex-shrink:0}
 .mreason{font-size:13px;color:var(--t2);font-style:italic;font-family:var(--serif);line-height:1.55;padding:8px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:10px}
 .mget{font-size:12px;color:var(--gd);line-height:1.6;padding:7px 10px;margin:6px 0 2px;background:rgba(120,250,174,.07);border-left:2px solid var(--green);}
 .mget::before{content:"+ ";font-weight:700;}
@@ -142,32 +145,20 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
 .mfrom{font-size:10px;color:var(--t3);letter-spacing:1px;text-transform:uppercase}
 .mnum{font-family:var(--serif);font-size:20px;color:var(--t1)}
 .mcur{font-size:11px;color:var(--t3)}
+.mvat{display:block;font-size:10px;color:var(--t3);margin-top:1px}
+.trim-rec-vat{font-size:9px;color:var(--t3);margin-left:4px;font-weight:400}
 .mbtn{width:100%;padding:10px;background:transparent;border:1px solid var(--border2);color:var(--t1);font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;transition:.15s}
 .mbtn:hover{background:var(--bg)}
 .mc.best .mbtn{background:var(--gd);border-color:var(--gd);color:#fff}
 .mc.best .mbtn:hover{background:var(--green)}
 
 /* REVIEWS */
-.rev-lbl{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gd);margin-bottom:16px;font-weight:500}
-.revgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-bottom:28px}
-.revcard{background:var(--white);padding:20px;display:flex;flex-direction:column;gap:10px}
 .rev-txt{font-family:var(--serif);font-size:13px;font-style:italic;color:var(--t2);line-height:1.65;flex:1}
 .rev-name{font-size:11px;font-weight:600;color:var(--t1)}
 .rev-model{font-size:11px;color:var(--t3)}
 
-/* SOCIAL PROOF */
-.sp{background:var(--gp);border:1px solid rgba(120,250,174,.2);padding:16px 22px;margin-bottom:24px;display:flex;align-items:center;gap:14px}
-.sp-pct{font-family:var(--serif);font-size:26px;color:var(--gd);flex-shrink:0}
-.sp-txt{font-size:13px;color:var(--t2);line-height:1.45}
-.sp-sub{font-size:11px;color:var(--t3)}
-
-/* SHARE BAR */
-.sbar{background:var(--white);border:1px solid var(--border);padding:18px 22px;margin-bottom:24px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.sbar-txt h4{font-size:13px;font-weight:600;color:var(--t1);margin-bottom:2px}
-.sbar-txt p{font-size:12px;color:var(--t3);font-weight:300}
 .btn-sec{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid var(--border);color:var(--t3);padding:8px 16px;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;transition:.15s}
 .btn-sec:hover{border-color:var(--border2);color:var(--t1)}
-.r-acts{display:flex;gap:10px;align-items:center;justify-content:center;padding:24px 0;border-top:1px solid var(--border);flex-wrap:wrap}
 
 /* MODAL */
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:500;align-items:center;justify-content:center;padding:20px}
@@ -187,6 +178,9 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
 .crm-note{font-size:11px;color:var(--t3);line-height:1.6;margin-bottom:10px}
 .btn-sub{width:100%;padding:13px;background:var(--gd);color:#fff;border:none;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;transition:.2s}
 .btn-sub:hover{background:var(--green)}
+.crm-consent{display:flex;align-items:flex-start;gap:8px;margin-bottom:14px;cursor:pointer}
+.crm-consent input{margin-top:2px;flex-shrink:0;accent-color:var(--gd);cursor:pointer}
+.crm-consent span{font-size:11px;color:var(--t3);line-height:1.6}
 .crm-ok{display:none;text-align:center;padding:20px 0}
 .crm-ok-icon{font-size:40px;margin-bottom:12px}
 .crm-ok h4{font-family:var(--serif);font-size:22px;margin-bottom:6px}
@@ -209,15 +203,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
   .stat+.stat{border-left:none;border-top:1px solid var(--border)}
 }
 
-.dealer{background:#f8f8f6;border:1px solid var(--border);border-left:3px solid var(--t3);margin-bottom:28px;}
-.dealer>summary{display:flex;align-items:center;gap:10px;padding:14px 22px;cursor:pointer;list-style:none;user-select:none;}
-.dealer>summary::-webkit-details-marker{display:none;}
-.dealer-arrow{font-size:9px;color:var(--t3);transition:transform .2s;display:inline-block;}
-.dealer[open] .dealer-arrow{transform:rotate(90deg);}
 .dealer-lbl{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--t3);font-weight:500;flex:1;}
-.dealer-copy{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--t3);background:none;border:1px solid var(--border);padding:5px 10px;cursor:pointer;transition:.15s;}
-.dealer-copy:hover{border-color:var(--border2);color:var(--t1);}
-.dealer-body{padding:0 22px 18px;margin:0;border-top:1px solid var(--border);font-family:monospace;font-size:12px;color:var(--t2);line-height:1.9;white-space:pre-wrap;}
 
 .trim-row{display:flex;flex-direction:column;gap:6px;margin:10px 0 8px;border-top:1px dashed var(--border);padding-top:10px;}
 .trim-rec{display:flex;align-items:center;gap:8px;padding:9px 10px;border:1.5px solid var(--green);background:rgba(120,250,174,.05);margin:8px 0 3px;}
@@ -336,12 +322,11 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
 .do-city{font-size:10px;color:var(--t3);margin-top:2px;}
 
 /* ═══════════════════════════════════════════════════════════
-   VARIANTA A — STEPPED DESIGN
-   Čtyři vizuální zóny s jasnou hierarchií
+   Výsledková stránka — rozvržení do čtyř zón
 ═══════════════════════════════════════════════════════════ */
 
-/* Výsledková stránka — reset starých stylů */
-.rw { padding: 0; max-width: 100%; }
+/* Výsledková stránka */
+.rw { flex: 1; padding: 0; max-width: 100%; margin: 0 auto; width: 100%; }
 
 /* Hlavička výsledků */
 .res-header {
@@ -364,6 +349,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
   margin: 0 0 24px;
   font-weight: 400;
   line-height: 1.2;
+  letter-spacing: -1px;
 }
 
 /* ── Zóna — základní ────────────────────────────────────── */
@@ -401,13 +387,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
 }
 
 /* Vision Brief v Zóně 1 */
-.vbox {
-  border: none;
-  border-left: 3px solid var(--green);
-  background: rgba(120,250,174,.04);
-  padding: 20px 24px;
-  margin-bottom: 28px;
-}
 .vb-top {
   display: flex;
   align-items: center;
@@ -415,75 +394,22 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
   gap: 12px;
   margin-bottom: 8px;
 }
-.vb-lbl {
-  font-size: 9px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--gd);
-  font-weight: 700;
-}
-.vb-txt {
-  font-family: var(--serif);
-  font-size: clamp(15px, 1.8vw, 19px);
-  color: var(--t1);
-  line-height: 1.75;
-  font-style: italic;
-}
 
-/* ── Model grid ─────────────────────────────────────────── */
-.mc-col { display: contents; }
-
-/* Všechny karty — základní */
+/* Všechny karty — základní (živě používáno i uvnitř tab panelů) */
 .mc {
   background: var(--white);
+  display: flex;
+  flex-direction: column;
+  position: relative;
   border: none;
   border-right: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   margin: 0;
   transition: background .15s;
 }
-/* Poslední sloupec — bez pravého borderu */
-/* ── RANK #1 — zelený top border, jemný tint ── */
-.mc-col-rank-1 > .mc:nth-child(1) {
-  border-top: 3px solid var(--green);
-}
-.mc-col-rank-1 > .mc {
-  background: #fafffe;
-}
-
-/* ── RANK #2 — standardní ── */
-.mc-col-rank-2 > .mc:nth-child(1) {
-  border-top: 3px solid var(--border2);
-}
-
-/* ── RANK #3 — subdued ── */
-.mc-col-rank-3 > .mc:nth-child(1) {
-  border-top: 3px solid var(--border);
-}
-.mc-col-rank-3 > .mc {
-  background: #f8f8f6;
-}
-.mc-col-rank-3 .mname,
-.mc-col-rank-3 .mprice-n { opacity: .85; }
-
-/* Rank badge */
-.rank-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 8px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 700;
-  padding: 2px 7px;
-  margin-bottom: 6px;
-}
-.rank-badge-1 { background: var(--gd); color: #fff; }
-.rank-badge-2 { background: var(--border2); color: var(--t2); }
-.rank-badge-3 { background: var(--border); color: var(--t3); }
 
 /* Karta label a tělo */
-.mbody { padding: 8px 14px 14px; }
+.mbody { flex: 1; display: flex; flex-direction: column; padding: 8px 14px 14px; }
 
 /* ══ ZÓNA 2 — světle šedá, doplňky ════════════════════════ */
 .zone-2 {
@@ -508,14 +434,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
   padding: 28px 0;
   border-bottom: 1px solid var(--border);
 }
-.rev-lbl {
-  font-size: 9px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--t3);
-  font-weight: 600;
-  margin: 0 0 12px;
-}
 .revgrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -524,108 +442,30 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
   margin-bottom: 14px;
   border: 1px solid var(--border);
 }
-.revcard { background: var(--white); padding: 14px 16px; }
+.revcard { background: var(--white); padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
 
 .sp {
   background: var(--bg);
   border: 1px solid var(--border);
   padding: 14px 18px;
+  margin-bottom: 24px;
   display: flex;
   align-items: center;
   gap: 16px;
 }
 .sp-pct {
+  font-family: var(--serif);
   font-size: 28px;
   font-weight: 800;
   color: var(--gd);
   line-height: 1;
+  flex-shrink: 0;
 }
 .sp-txt { font-size: 12px; color: var(--t2); line-height: 1.5; }
 .sp-sub { font-size: 10px; color: var(--t3); margin-top: 2px; }
 .sp-bar-wrap { flex: 1; height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
 .sp-bar { height: 100%; background: var(--green); border-radius: 2px; transition: width 1.2s var(--ease); }
 
-/* ══ ZÓNA 4 — zelená CTA ═══════════════════════════════════ */
-.zone-4 {
-  background: var(--green);
-  padding: 0;
-}
-.zone-4-inner {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  padding-top: 22px;
-  padding-bottom: 22px;
-}
-.sbar-txt h4 {
-  font-size: 15px;
-  font-weight: 700;
-  color: #fff;
-  margin: 0 0 2px;
-}
-.sbar-txt p {
-  font-size: 12px;
-  color: rgba(255,255,255,.75);
-  margin: 0;
-}
-.sbar-btns {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-left: auto;
-}
-.btn-sbar {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .5px;
-  padding: 8px 16px;
-  background: rgba(255,255,255,.15);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,.35);
-  cursor: pointer;
-  transition: .15s;
-  font-family: var(--sans);
-}
-.btn-sbar:hover { background: rgba(255,255,255,.28); }
-
-/* Dealer detail pod zónou 4 */
-.dealer {
-  background: var(--t1);
-  border-top: none;
-  margin: 0;
-}
-.dealer summary {
-  padding: 10px 32px;
-  font-size: 10px;
-  color: rgba(255,255,255,.5);
-  cursor: pointer;
-  letter-spacing: 1px;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.dealer-body {
-  padding: 16px 32px;
-  font-size: 11px;
-  color: rgba(255,255,255,.7);
-  line-height: 1.7;
-  white-space: pre-wrap;
-  font-family: var(--sans);
-  border-top: 1px solid rgba(255,255,255,.1);
-  margin: 0;
-}
-.dealer-copy {
-  margin-left: auto;
-  font-size: 9px;
-  padding: 3px 8px;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,.3);
-  color: rgba(255,255,255,.5);
-  cursor: pointer;
-  font-family: var(--sans);
-}
 
 /* ── Akční tlačítka ────────────────────────────────────── */
 .r-acts {
@@ -635,213 +475,17 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
   display: flex;
   gap: 10px;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   background: var(--white);
   border-top: 1px solid var(--border);
 }
 
 
 /* ══════════════════════════════════════════════════════════
-   VARIANTA B — AKORDÉON
-   Modely pod sebou, rozbalitelné, s tabbed navigací uvnitř
+   Karty modelů — tabový systém (Model / Výbava / Nabídky / Ojeté)
 ══════════════════════════════════════════════════════════ */
 
-/* Přebít starý mgrid grid layout */
-.mc-col { display: block !important; }
-
-/* ── Akordéon item ─────────────────────────────────────── */
-.acc-item {
-  border: 1px solid var(--border);
-  margin-bottom: 6px;
-  background: var(--white);
-  transition: box-shadow .2s;
-}
-.acc-item.acc-open {
-  box-shadow: 0 2px 16px rgba(0,0,0,.07);
-}
-
-/* ── Rank barvy ────────────────────────────────────────── */
-.acc-rank-1 { border-left: 3px solid var(--green); }
-.acc-rank-2 { border-left: 3px solid var(--border2); }
-.acc-rank-3 { border-left: 3px solid var(--border); }
-.acc-rank-1 .acc-head { background: #f7fffa; }
-
-/* ── Akordéon header ───────────────────────────────────── */
-.acc-head {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 16px 20px;
-  cursor: pointer;
-  user-select: none;
-  transition: background .15s;
-}
-.acc-head:hover { background: var(--card); }
-.acc-rank-1 .acc-head:hover { background: rgba(120,250,174,.06); }
-
-.acc-rank-badge {
-  font-size: 8px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 700;
-  padding: 3px 8px;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.acc-rank-badge-1 { background: var(--gd); color: #fff; }
-.acc-rank-badge-2 { background: var(--border2); color: var(--t2); }
-.acc-rank-badge-3 { background: var(--border); color: var(--t3); }
-
-.acc-head-name {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  flex: 1;
-  min-width: 0;
-}
-.acc-model-name {
-  font-family: var(--serif);
-  font-size: clamp(17px, 2vw, 22px);
-  color: var(--t1);
-  font-weight: 400;
-}
-.acc-model-price {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--gd);
-  font-family: var(--sans);
-}
-.acc-model-price-lbl {
-  font-size: 11px;
-  color: var(--t3);
-}
-
-.acc-head-right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-.acc-best-dot {
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: var(--green);
-  display: inline-block;
-}
-.acc-chevron {
-  font-size: 10px;
-  color: var(--t3);
-  transition: transform .2s;
-}
-
-/* ── Akordéon body ─────────────────────────────────────── */
-.acc-body {
-  border-top: 1px solid var(--border);
-}
-
-/* ── Taby ──────────────────────────────────────────────── */
-.acc-tabs {
-  display: flex;
-  border-bottom: 1px solid var(--border);
-  background: var(--card);
-}
-.acc-tab {
-  padding: 10px 20px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .5px;
-  color: var(--t3);
-  background: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  cursor: pointer;
-  transition: .15s;
-  font-family: var(--sans);
-  text-transform: uppercase;
-}
-.acc-tab:hover { color: var(--t1); }
-.acc-tab.acc-tab-active {
-  color: var(--gd);
-  border-bottom-color: var(--gd);
-  background: var(--white);
-}
-
-/* ── Panely ────────────────────────────────────────────── */
-.acc-panel { display: none; }
-.acc-panel.acc-panel-active { display: block; }
-
-/* Panel: Model (card1) — layout přizpůsobit akordéonu */
-.acc-panel-active .mc {
-  border: none !important;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-.acc-panel-active .mc.best { border: none !important; }
-
-/* Uvnitř panelu — foto + info vedle sebe */
-.acc-panel[data-pi="0"] .mphoto {
-  max-height: 220px;
-  overflow: hidden;
-}
-.acc-panel[data-pi="0"] .mphoto img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-/* Panel Výbava a Dealer — full width */
-.acc-panel[data-pi="1"],
-.acc-panel[data-pi="2"] {
-  padding: 0;
-}
-.acc-panel[data-pi="1"] .mc,
-.acc-panel[data-pi="2"] .mc {
-  margin: 0;
-  padding: 0;
-}
-
-
-/* Animace otevření akordéonu */
-.acc-body {
-  animation: accOpen .22s var(--ease);
-}
-@keyframes accOpen {
-  from { opacity: 0; transform: translateY(-6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Model panel — foto + specs layout vedle sebe na wide */
-@media (min-width: 640px) {
-  .acc-panel[data-pi="0"] > .mc {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-  }
-  .acc-panel[data-pi="0"] > .mc .mphoto {
-    max-height: none;
-    height: 100%;
-  }
-  .acc-panel[data-pi="0"] > .mc .mphoto img {
-    height: 100%;
-    max-height: 300px;
-  }
-}
-
-/* Výbava panel — full width bez extra paddingu */
-.acc-panel[data-pi="1"] > .mc,
-.acc-panel[data-pi="2"] > .mc {
-  padding: 0 !important;
-}
-.acc-panel[data-pi="1"] .mbody,
-.acc-panel[data-pi="2"] .mbody {
-  padding: 16px 20px;
-}
-.acc-panel[data-pi="1"] 
-
-/* ══════════════════════════════════════════════════════════
-   VARIANTA B — TAB KARTY (3 vedle sebe)
-══════════════════════════════════════════════════════════ */
-
-/* Přebít grid/acc layout */
-.mc-col { display: contents !important; }
 
 /* ── Tab karta ─────────────────────────────────────────── */
 .mc-tab-card {
@@ -941,101 +585,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
   display: block;
 }
 
-/* ══ ZÓNA 4 — čisté zápatí bez zelené plochy ═══════════ */
-.zone-4 {
-  background: var(--white) !important;
-  border-top: 1px solid var(--border);
-  padding: 28px 0 !important;
-}
-
-.cta-block {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 16px;
-}
-.cta-eyebrow {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--t1);
-  margin-bottom: 3px;
-}
-.cta-sub {
-  font-size: 12px;
-  color: var(--t3);
-  margin: 0;
-}
-.cta-btns {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-left: auto;
-}
-.btn-cta {
-  font-size: 11px;
-  font-weight: 600;
-  padding: 8px 16px;
-  background: var(--gd);
-  color: #fff;
-  border: 1px solid var(--green);
-  cursor: pointer;
-  transition: .15s;
-  font-family: var(--sans);
-  letter-spacing: .3px;
-}
-.btn-cta:hover { background: var(--gd); border-color: var(--gd); }
-.btn-cta.btn-cta-outline {
-  background: transparent;
-  color: var(--t2);
-  border-color: var(--border2);
-}
-.btn-cta.btn-cta-outline:hover {
-  border-color: var(--t2);
-  color: var(--t1);
-}
-
-.dealer-detail {
-  border: 1px solid var(--border);
-  background: var(--card);
-}
-.dealer-detail summary {
-  padding: 10px 14px;
-  font-size: 10px;
-  color: var(--t3);
-  cursor: pointer;
-  letter-spacing: 1px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  list-style: none;
-}
-.dealer-detail summary::-webkit-details-marker { display: none; }
-.dealer-body {
-  padding: 14px 16px;
-  font-size: 11px;
-  color: var(--t2);
-  line-height: 1.7;
-  white-space: pre-wrap;
-  font-family: var(--sans);
-  border-top: 1px solid var(--border);
-  margin: 0;
-  background: var(--white);
-}
-.dealer-copy {
-  margin-left: auto;
-  font-size: 9px;
-  padding: 2px 7px;
-  background: transparent;
-  border: 1px solid var(--border2);
-  color: var(--t3);
-  cursor: pointer;
-  font-family: var(--sans);
-}
-
-
 /* ══ Vision Brief — redesign ═══════════════════════════════ */
 .vbox {
   border: none;
@@ -1058,6 +607,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
   text-transform: uppercase;
   color: var(--gd);
   font-weight: 700;
+  margin-bottom: 10px;
 }
 
 /* Edit area — subtilní, vpravo */
@@ -1188,6 +738,8 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
 .dealer-copy {
   margin-left: auto;
   font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   padding: 2px 8px;
   background: transparent;
   border: 1px solid var(--border2);
@@ -1198,9 +750,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
 }
 .dealer-copy:hover { color: var(--t1); border-color: var(--t2); }
 
-
-/* Edit hint — neviditelný, jen cursor na textu naznačí */
-.vb-txt { cursor: text; }
 .vb-txt:not([contenteditable="true"]):hover {
   border-bottom: 1px dashed rgba(120,250,174,.4);
 }
@@ -1236,7 +785,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
 
 .vb-edit-hint { display: none !important; }
 
-/* ══ Pros / Cons redesign ══════════════════════════════════ */
 /* ══ Share sub ══════════════════════════════════════════════ */
 .share-sub{display:none;gap:6px;align-items:center;}
 .share-sub.share-sub-open{display:flex;}
@@ -1248,19 +796,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
 .btn-explore:hover{background:var(--gd);color:#fff;}
 
 
-/* ══ Pros / Cons — finální struktura ═══════════════════════ */
-/* Skupina kladů */
-/* Bodové klady — ikona + */
-/* Textové shrnutí kladů — šipka → */
-/* Skupina záporů */
-/* Bodové zápory — ikona − */
-/* Textové shrnutí záporů — šipka → */
-
-/* ══ Pros / Cons ════════════════════════════════════════════ */
-/* Bodové položky — ikona ze spanu, žádné ::before */
-/* Textové shrnutí v rámečku */
-
-/* ══ Pros / Cons — definitivní verze ══════════════════════ */
+/* ══ Pros / Cons ══════════════════════════════════════════ */
 .mpros-wrap { display:flex; flex-direction:column; gap:10px; margin:12px 0; }
 .mpros-lbl { font-size:8px; letter-spacing:2px; text-transform:uppercase; font-weight:700; color:var(--gd); margin-bottom:5px; padding-bottom:3px; border-bottom:1px solid rgba(120,250,174,.25); }
 .mcons-lbl { font-size:8px; letter-spacing:2px; text-transform:uppercase; font-weight:700; color:var(--t3); margin-bottom:5px; padding-bottom:3px; border-bottom:1px solid var(--border); }
@@ -1913,7 +1449,10 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
       <div class="field"><label id="lModel">Preferovaný model</label><select id="iModel"></select></div>
       <div class="field"><label id="lCity">Nejbližší město</label><input type="text" id="iCity" placeholder="Praha, Brno…"></div>
       <div class="field"><label id="lNote">Poznámka</label><textarea id="iNote" rows="2" placeholder="Např. preferuji červenou barvu, zajímá mě leasing…" style="width:100%;padding:8px 10px;border:1px solid var(--border2);font-family:var(--sans);font-size:13px;resize:vertical;"></textarea></div>
-      <p class="crm-note" id="crmGdpr">Odesláním souhlasíte se zpracováním osobních údajů pro účely test drive.</p>
+      <label class="crm-consent">
+        <input type="checkbox" id="crmConsent">
+        <span id="crmGdpr">Souhlasím se zpracováním osobních údajů pro účely test drive.</span>
+      </label>
       <button class="btn-sub" onclick="submitCRM()" id="btnSub">Odeslat požadavek →</button>
     </div>
     <div class="crm-ok" id="crmOk">
@@ -1965,7 +1504,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
         <div class="mode-card-cta mode-card-cta-full" id="mc-full-cta">Začít <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
 
-      <div class="mode-card mode-gps" onclick="show('pgGPS')">
+      <div class="mode-card mode-gps" onclick="trackEvent('mode_start',{mode:'gps'});show('pgGPS')">
         <div class="mode-card-top">
           <span class="mode-badge mode-badge-gps" id="mc-gps-badge">📍 GPS</span>
           <span class="mode-time" id="mc-gps-time">0 otázek</span>
@@ -3114,11 +2653,12 @@ var T = {
     shareH:'Vezměte vizi do prodejny', shareP:'Sdílejte svůj Vision Brief nebo pošlete emailem.',
     bShare:'Sdílet', bEmail:'Emailem', bRestart:'Začít znovu',
     bTD:'Domluvit Infinite Test Drive',
-    best:'Nejlepší shoda', from:'od',
+    best:'Nejlepší shoda', from:'od', vat:'vč. DPH', yourColour:'Vaše barva',
     explBtn:function(n){return 'Prozkoumat '+n;},
     crmSub:'Vyzkoušej, co opravdu potřebuješ — jízda přizpůsobená tvému životu.',
     lName:'Jméno', lPhone:'Telefon', lEmail:'E-mail', lModel:'Preferovaný model', lCity:'Nejbližší město', lNote:'Poznámka',
-    crmNote:'Odesláním souhlasíte se zpracováním osobních údajů pro účely test drive.',
+    crmNote:'Souhlasím se zpracováním osobních údajů pro účely test drive.',
+    crmConsentReq:'Pro odeslání je potřeba souhlasit se zpracováním osobních údajů.',
     btnSub:'Odeslat požadavek →',
     okTitle:'Odesláno!', okText:'Váš Vision Brief byl odeslán. Dealer vás kontaktuje do 24 hodin.',
     loads:['Čteme váš příběh…','Hledáme vaše auto…','Ztělesňujeme vaši vizi…','Skoro hotovo…'],
@@ -3156,11 +2696,12 @@ var T = {
     shareH:'Take your vision to the showroom', shareP:'Share your Vision Brief or send by email.',
     bShare:'Share', bEmail:'Email', bRestart:'Start over',
     bTD:'Book Infinite Test Drive',
-    best:'Best match', from:'from',
+    best:'Best match', from:'from', vat:'incl. VAT', yourColour:'Your colour',
     explBtn:function(n){return 'Explore '+n;},
     crmSub:'Test what you truly need — a test drive tailored to your life.',
     lName:'Name', lPhone:'Phone', lEmail:'Email', lModel:'Preferred model', lCity:'Nearest city', lNote:'Note',
-    crmNote:'By submitting you agree to processing of personal data for test drive purposes.',
+    crmNote:'I agree to the processing of my personal data for test drive purposes.',
+    crmConsentReq:'Please agree to the processing of personal data to submit.',
     btnSub:'Send request →',
     okTitle:'Sent!', okText:'Your Vision Brief has been sent to Škoda CRM. A dealer will contact you within 24 hours.',
     loads:['Reading your story…','Finding your car…','Embodying your vision…','Almost done…'],
@@ -3198,11 +2739,12 @@ var T = {
     shareH:'Nehmen Sie Ihre Vision mit in den Showroom', shareP:'Teilen Sie Ihren Vision Brief oder senden Sie per E-Mail.',
     bShare:'Teilen', bEmail:'E-Mail', bRestart:'Neu starten',
     bTD:'Infinite Probefahrt vereinbaren',
-    best:'Beste Übereinstimmung', from:'ab',
+    best:'Beste Übereinstimmung', from:'ab', vat:'inkl. MwSt.', yourColour:'Ihre Farbe',
     explBtn:function(n){return n+' entdecken';},
     crmSub:'Testen Sie, was Sie wirklich brauchen — eine auf Ihr Leben zugeschnittene Probefahrt.',
     lName:'Name', lPhone:'Telefon', lEmail:'E-Mail', lModel:'Bevorzugtes Modell', lCity:'Nächste Stadt', lNote:'Anmerkung',
-    crmNote:'Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten für Probefahrtzwecke zu.',
+    crmNote:'Ich stimme der Verarbeitung meiner Daten für Probefahrtzwecke zu.',
+    crmConsentReq:'Bitte stimmen Sie der Verarbeitung Ihrer Daten zu, um fortzufahren.',
     btnSub:'Anfrage senden →',
     okTitle:'Gesendet!', okText:'Ihr Vision Brief wurde an Škoda CRM gesendet. Ein Händler meldet sich innerhalb von 24 Stunden.',
     loads:['Lesen Ihre Geschichte…','Suchen Ihr Auto…','Verkörpern Ihre Vision…','Fast fertig…'],
@@ -3556,12 +3098,30 @@ var GROUPS={
   },
 };
 var GROUP_ORDER=['zivot','jazda','prostor','vzhled','technika','koupě'];
+var COLOUR_HEX={'col-white':'#f4f3ee','col-black':'#1a1a1a','col-grey':'#9aa0a6','col-blue':'#2c5f8a','col-red':'#a6392b','col-green':'#4a5d3a',light:'#f4f3ee',dark:'#2a2a2a',vivid:'#a6392b'};
+function colourBadge(){
+  var val,opts;
+  if(easyMode){
+    val=easySel['e-colour'];
+    opts=EASY_STEPS.find(function(s){return s.id==='e-colour';}).opts;
+    if(!val||val==='any')return '';
+  } else {
+    val=(sel['colour']||[])[0];
+    opts=STEPS.find(function(s){return s.id==='colour';}).opts;
+    if(!val||val==='col-any')return '';
+  }
+  var opt=opts.find(function(o){return o.v===val;});
+  if(!opt)return '';
+  var hex=COLOUR_HEX[val]||'#ccc';
+  var label=(opt.l[lang]||opt.l.cs);
+  return '<span class="colour-badge"><span class="colour-dot" style="background:'+hex+'"></span>'+T[lang].yourColour+': '+label+'</span>';
+}
 
 // ── MODELS ────────────────────────────────────────────────────
 var MODELS=[
   {name:'Fabia',variant:'Active / Ambition / Monte Carlo',
-   seg:{cs:'Malý hatchback',en:'Small hatchback',de:'Kleiner Hatchback'},price:'359 900',
-   photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Skoda_Fabia_IV_IMG_3936.jpg/800px-Skoda_Fabia_IV_IMG_3936.jpg',
+   seg:{cs:'Malý hatchback',en:'Small hatchback',de:'Kleiner Hatchback'},price:'319 900',
+   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Skoda_Fabia_IV_IMG_3936.jpg?width=800',
    sc:{commute:10,'city-park':10,tight:10,parallel:9,'t-small':10,eco:9,petrol:9,mild:8,entry:10,standard:9,now:9,minimal:9,'no-issue':6,'pass-rarely':10,'pass-never':10,'dist-low':12,'dist-mid':8,'prio-sprint':6,'prio-city':12,'ann-boring':4,'ann-park':8,'dec-solo':8,'dec-open':6,'prio-eco':16,'prio-space':-8},
    pros:{cs:['Skvělá obratnost ve městě','Nízká spotřeba','Atraktivní cena'],en:['Great city maneuverability','Low fuel consumption','Attractive price'],de:['Tolle Wendigkeit','Niedriger Verbrauch','Attraktiver Preis']},
    cons:{cs:['Malý kufr 380 l','Pro rodinu s 2 dětmi může být těsné'],en:['Small 380 l boot','Can be tight for family with 2 kids'],de:['Kleiner 380-l-Kofferraum','Eng für Familie mit 2 Kindern']},
@@ -3573,8 +3133,8 @@ var MODELS=[
   ],
    specs:{engine:'1.0 TSI / 1.5 TSI',power:70,torque:160,consumption:'5.2 l/100km',boot:380,length:4108,seats:5}},
   {name:'Scala',variant:'Ambition / Style / Monte Carlo',
-   seg:{cs:'Kompaktní hatchback',en:'Compact hatchback',de:'Kompakter Hatchback'},price:'529 900',
-   photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Skoda_Scala_IMG_0166.jpg/800px-Skoda_Scala_IMG_0166.jpg',
+   seg:{cs:'Kompaktní hatchback',en:'Compact hatchback',de:'Kompakter Hatchback'},price:'399 900',
+   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Skoda_Scala_IMG_0166.jpg?width=800',
    sc:{commute:9,social:9,tech:9,sporty:9,dynamic:8,'city-park':8,'t-small':8,'t-mid':7,auto:8,petrol:9,mild:8,standard:9,premium:8,'tech-int':8,neutral:8,'pass-rarely':8,'pass-weekly':6,'dist-low':10,'dist-mid':9,'prio-sprint':7,'prio-city':10,'ann-boring':8,'ann-noise':6,'dec-solo':7,'dec-partner':6,'prio-tech':10},
    pros:{cs:['Moderní design','Velký kufr pro tuto třídu','Sportovní charakter'],en:['Modern design','Large boot for class','Sporty character'],de:['Modernes Design','Großer Kofferraum','Sportlicher Charakter']},
    cons:{cs:['Bez dieselové varianty','Vyšší cena než Fabia'],en:['No diesel option','Higher price than Fabia'],de:['Kein Diesel','Höherer Preis als Fabia']},
@@ -3586,7 +3146,7 @@ var MODELS=[
   ]},
   {name:'Octavia',variant:'Ambition / Style / RS',
    seg:{cs:'Střední liftback',en:'Mid-size liftback',de:'Mittelklasse Liftback'},price:'579 900',
-   photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Skoda_Octavia_IV_IMG_1855.jpg/800px-Skoda_Octavia_IV_IMG_1855.jpg',
+   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Skoda_Octavia_IV_IMG_1855.jpg?width=800',
    sc:{work:10,commute:9,travel:9,elegant:9,classic:10,neutral:9,calm:9,safe:9,road:10,leather:8,phev:9,diesel:10,petrol:9,mild:9,standard:9,premium:8,value:10,entry:8,now:9,leasing:10,'t-mid':10,weekend:8,senior:7,'pass-weekly':8,'pass-daily':7,'dist-mid':9,'dist-high':10,'prio-range':10,'prio-comfort':9,'ann-noise':9,'ann-tech':8,'dec-partner':8,'dec-company':9,'prio-eco':10,'prio-tech':8},
    pros:{cs:['Nejprodávanější Škoda','Skvělý poměr cena výkon','Prostorný interiér'],en:['Best-selling Škoda','Excellent value','Spacious interior'],de:['Meistverkauftes Škoda','Ausgezeichnetes Preis-Leistungs-Verhältnis','Geräumig']},
    cons:{cs:['Nižší sed než SUV','Méně vizuálně výrazný'],en:['Lower seating than SUV','Less visually striking'],de:['Niedrigere Sitzposition als SUV','Optisch weniger auffällig']},
@@ -3597,8 +3157,8 @@ var MODELS=[
     {n:'RS',p:'799 900',inc:{cs:'Sportovní podvozek, RS interiér, 19" kola',en:'Sport chassis, RS interior, 19" wheels',de:'Sportfahrwerk, RS-Interieur, 19"-Räder'}},
   ]},
   {name:'Octavia Combi',variant:'Style / Selection / Scout',
-   seg:{cs:'Střední kombi',en:'Mid-size estate',de:'Mittelklasse Kombi'},price:'619 900',
-   photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Skoda_Octavia_IV_Combi_IMG_1856.jpg/800px-Skoda_Octavia_IV_Combi_IMG_1856.jpg',
+   seg:{cs:'Střední kombi',en:'Mid-size estate',de:'Mittelklasse Kombi'},price:'679 900',
+   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Skoda_Octavia_IV_Combi_IMG_1856.jpg?width=800',
    sc:{family:10,work:10,travel:9,shopping:9,pets:8,everything:9,stroller:9,luggage:10,weekly:10,dog:8,calm:9,safe:9,road:10,classic:10,elegant:8,neutral:9,phev:9,diesel:10,petrol:9,mild:9,standard:9,value:10,now:9,leasing:10,'t-mid':10,'t-tow':8,longdrive:9,handyman:8,'pass-daily':10,'pass-weekly':9,'dist-high':10,'dist-mid':8,'prio-range':10,'ann-space':0,'ann-noise':8,'dec-partner':10,'dec-company':8,'prio-space':18},
    pros:{cs:['Kufr 640 l — největší ve třídě','4x4 Scout varianta','PHEV dostupný'],en:['640 l boot — class leading','4x4 Scout variant','PHEV available'],de:['640-l-Kofferraum','4x4 Scout-Variante','PHEV verfügbar']},
    cons:{cs:['Není SUV silueta','Méně vizuálně výrazný'],en:['Not an SUV silhouette','Less visually striking'],de:['Keine SUV-Silhouette','Optisch weniger auffällig']},
@@ -3609,8 +3169,8 @@ var MODELS=[
     {n:'Scout',p:'799 900',inc:{cs:'4x4 pohon, zvýšený podvozek, terénní ochrana',en:'4x4 drive, raised chassis, off-road protection',de:'Allradantrieb, erhöhtes Fahrwerk, Gelände'}},
   ]},
   {name:'Kamiq',variant:'Active / Ambition / Style',
-   seg:{cs:'Malé městské SUV',en:'Small urban SUV',de:'Kleines Stadt-SUV'},price:'529 900',
-   photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/2021_Skoda_Kamiq_SE_L_1.0_Front.jpg/800px-2021_Skoda_Kamiq_SE_L_1.0_Front.jpg',
+   seg:{cs:'Malé městské SUV',en:'Small urban SUV',de:'Kleines Stadt-SUV'},price:'399 900',
+   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/2021_Skoda_Kamiq_SE_L_1.0_Front.jpg?width=800',
    sc:{commute:9,'city-park':10,tight:9,parallel:9,suv:8,safe:8,view:8,eco:8,'t-small':9,auto:9,petrol:9,mild:8,standard:9,value:8,entry:7,'pass-rarely':9,'pass-weekly':7,'dist-low':11,'dist-mid':8,'prio-city':11,'ann-park':9,'ann-boring':5,'dec-solo':8,'dec-partner':7,'prio-space':6,'prio-tech':8,'prio-eco':12},
    pros:{cs:['SUV silueta ve městě','Vysoký sed','Dobrá výbava za cenu'],en:['SUV silhouette in city','High seating position','Good equipment for price'],de:['SUV-Silhouette in der Stadt','Hohe Sitzposition','Gute Ausstattung']},
    cons:{cs:['Malý kufr 400 l','Bez pohonu 4x4'],en:['Small 400 l boot','No 4x4'],de:['Kleiner 400-l-Kofferraum','Kein 4x4']},
@@ -3621,8 +3181,8 @@ var MODELS=[
     {n:'Style',p:'479 900',inc:{cs:'Canton audio, bezklíčový přístup, panorama střecha',en:'Canton audio, keyless, panoramic roof',de:'Canton Audio, Keyless, Panoramadach'}},
   ]},
   {name:'Karoq',variant:'Ambition / Style / Sportline',
-   seg:{cs:'Kompaktní SUV',en:'Compact SUV',de:'Kompaktes SUV'},price:'699 900',
-   photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Skoda_Karoq_IMG_2007.jpg/800px-Skoda_Karoq_IMG_2007.jpg',
+   seg:{cs:'Kompaktní SUV',en:'Compact SUV',de:'Kompaktes SUV'},price:'629 900',
+   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Skoda_Karoq_IMG_2007.jpg?width=800',
    sc:{commute:9,social:9,suv:8,sporty:8,safe:8,'city-park':9,tech:9,view:8,eco:8,dynamic:8,'tech-int':9,leather:8,panorama:8,auto:9,petrol:9,phev:9,mild:8,standard:9,premium:8,value:9,'t-mid':9,now:9,leasing:9,'pass-weekly':9,'pass-daily':8,'dist-mid':9,'dist-high':8,'prio-range':8,'prio-comfort':8,'ann-noise':7,'ann-space':8,'dec-partner':9,'prio-space':12,'prio-tech':14,'prio-offroad':14},
    pros:{cs:['Kompaktní SUV s moderním designem','Vynikající technologie','5 hvězd Euro NCAP'],en:['Compact SUV with modern design','Excellent technology','5-star Euro NCAP'],de:['Kompaktes SUV','Ausgezeichnete Technologie','5-Sterne Euro NCAP']},
    cons:{cs:['Menší kufr než Kodiaq','Pouze 5 sedadel'],en:['Smaller boot than Kodiaq','Only 5 seats'],de:['Kleinerer Kofferraum als Kodiaq','Nur 5 Sitze']},
@@ -3633,8 +3193,8 @@ var MODELS=[
     {n:'Sportline',p:'739 900',inc:{cs:'Sportovní podvozek, 19" kola, tmavé prvky exteriéru',en:'Sport chassis, 19" wheels, dark exterior accents',de:'Sportfahrwerk, 19"-Räder, Dunkelakzente'}},
   ]},
   {name:'Kodiaq',variant:'Selection / Sportline / L&K',
-   seg:{cs:'Velké SUV 7 míst',en:'Large SUV 7 seats',de:'Großes SUV 7 Sitze'},price:'899 900',
-   photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Skoda_Kodiaq_II_front_20230813.jpg/800px-Skoda_Kodiaq_II_front_20230813.jpg',
+   seg:{cs:'Velké SUV 7 míst',en:'Large SUV 7 seats',de:'Großes SUV 7 Sitze'},price:'949 900',
+   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Skoda_Kodiaq_II_front_20230813.jpg?width=800',
    sc:{family:10,nature:9,travel:9,pets:10,shopping:9,sport:8,everything:10,stroller:10,luggage:10,weekly:10,passengers:10,dog:10,safe:10,view:10,suv:10,leather:9,panorama:9,auto:10,phev:8,diesel:9,premium:10,top:10,'t-large':10,'t-awd':8,'t-tow':10,longdrive:8,handyman:10,'pass-daily':12,'pass-weekly':10,'dist-high':9,'dist-mid':8,'prio-range':9,'prio-comfort':10,'ann-space':0,'ann-noise':8,'dec-partner':12,'dec-company':7,'prio-space':22,'prio-offroad':16},
    pros:{cs:['Až 7 sedadel','Kufr 835 l v 5místné variantě','Tažné až 2500 kg'],en:['Up to 7 seats','835 l boot in 5-seat config','Tow up to 2500 kg'],de:['Bis 7 Sitze','835-l-Kofferraum','Anhängelast bis 2500 kg']},
    cons:{cs:['Velké rozměry — parkování','Vyšší cena'],en:['Large dimensions — tricky parking','Higher price'],de:['Große Abmessungen','Höherer Preis']},
@@ -3645,8 +3205,8 @@ var MODELS=[
     {n:'L&K',p:'1 149 900',inc:{cs:'Masážní sedadla, head-up displej, 4-zónová klima, prémiová kůže',en:'Massage seats, head-up, 4-zone AC, premium leather',de:'Massagesitze, Head-up, 4-Zonen-Klima, Premium-Leder'}},
   ]},
   {name:'Enyaq',variant:'60 / 85 / 85x / RS',
-   seg:{cs:'Elektrické SUV',en:'Electric SUV',de:'Elektrisches SUV'},price:'979 900',
-   photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Skoda_Enyaq_iV_IMG_9396.jpg/800px-Skoda_Enyaq_iV_IMG_9396.jpg',
+   seg:{cs:'Elektrické SUV',en:'Electric SUV',de:'Elektrisches SUV'},price:'899 900',
+   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Skoda_Enyaq_iV_IMG_9396.jpg?width=800',
    sc:{eco:10,tech:10,social:9,commute:9,work:9,travel:8,suv:9,bev:10,'tech-int':10,'dark-int':9,leather:9,panorama:10,ambient:9,safe:9,view:9,calm:9,auto:10,premium:9,top:9,'t-mid':9,'t-large':8,'pass-weekly':8,'pass-daily':7,'dist-mid':10,'dist-high':8,'prio-comfort':10,'prio-range':6,'ann-fuel':12,'ann-tech':10,'ann-noise':10,'dec-partner':8,'dec-company':9,'prio-eco':20,'prio-tech':18,'prio-space':10},
    pros:{cs:['100% elektrický','Futuristický interiér','Panoramatická střecha','RS verze 299 koní'],en:['100% electric','Futuristic interior','Panoramic roof','RS version 299 hp'],de:['100% elektrisch','Futuristisches Interieur','Panoramadach','RS 299 PS']},
    cons:{cs:['Vyšší cena','Závisí na nabíjecí síti'],en:['Higher price','Dependent on charging network'],de:['Höherer Preis','Abhängigkeit vom Ladenetz']},
@@ -3657,8 +3217,8 @@ var MODELS=[
     {n:'RS',p:'1 249 900',inc:{cs:'Sportovní podvozek, RS interiér, kůže, panorama',en:'Sport chassis, RS interior, leather, panoramic roof',de:'Sportfahrwerk, RS-Interieur, Leder, Panoramadach'}},
   ]},
   {name:'Elroq',variant:'50 / 85 / 85x / vRS',
-   seg:{cs:'Kompaktní elektrické SUV',en:'Compact electric SUV',de:'Kompaktes elektrisches SUV'},price:'899 900',
-   photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/2024_Skoda_Elroq_85_front_8.11.23.jpg/800px-2024_Skoda_Elroq_85_front_8.11.23.jpg',
+   seg:{cs:'Kompaktní elektrické SUV',en:'Compact electric SUV',de:'Kompaktes elektrisches SUV'},price:'799 900',
+   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/2024_Skoda_Elroq_85_front_8.11.23.jpg?width=800',
    sc:{eco:10,tech:10,commute:9,social:9,suv:9,'city-park':8,bev:10,'tech-int':10,leather:8,panorama:8,ambient:8,safe:9,dynamic:9,auto:10,sporty:8,standard:8,premium:9,'t-mid':10,'pass-rarely':8,'pass-weekly':8,'dist-low':10,'dist-mid':10,'prio-sprint':9,'prio-city':9,'ann-fuel':12,'ann-tech':10,'ann-boring':8,'dec-solo':8,'dec-partner':8,'prio-eco':18,'prio-tech':16},
    pros:{cs:['Nový design Modern Solid','Kompaktnější než Enyaq','vRS verze 320 koní'],en:['New Modern Solid design','More compact than Enyaq','vRS 320 hp'],de:['Neues Modern-Solid-Design','Kompakter als Enyaq','vRS 320 PS']},
    cons:{cs:['Pouze elektrický','Menší kufr než Enyaq'],en:['Electric only','Smaller boot than Enyaq'],de:['Nur elektrisch','Kleinerer Kofferraum als Enyaq']},
@@ -3669,8 +3229,8 @@ var MODELS=[
     {n:'vRS',p:'1 099 900',inc:{cs:'Sportovní podvozek, prémiový interiér, kůže',en:'Sport chassis, premium interior, leather',de:'Sportfahrwerk, Premium-Interieur, Leder'}},
   ]},
   {name:'Superb',variant:'Ambition / Style / L&K / plug-in hybrid',
-   seg:{cs:'Velký liftback',en:'Large liftback',de:'Große Limousine'},price:'999 900',
-   photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Skoda_Superb_IV_front_20231017.jpg/800px-Skoda_Superb_IV_front_20231017.jpg',
+   seg:{cs:'Velký liftback',en:'Large liftback',de:'Große Limousine'},price:'1 049 900',
+   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Skoda_Superb_IV_front_20231017.jpg?width=800',
    sc:{work:10,travel:10,social:10,leather:10,elegant:10,classic:10,calm:10,safe:9,road:10,tech:9,'dark-int':9,panorama:9,'warm-int':8,massage:9,ambient:9,auto:10,phev:10,diesel:10,top:10,premium:9,'t-large':10,leasing:10,longdrive:10,'pass-daily':10,'pass-weekly':9,'dist-high':12,'dist-vhigh':12,'prio-range':12,'prio-comfort':12,'ann-noise':12,'ann-tech':9,'ann-boring':8,'dec-partner':9,'dec-company':12,'prio-space':12,'prio-tech':8},
    pros:{cs:['Nejprostoranější Škoda','Prémiový interiér','PHEV varianta','Ideální pro business'],en:['Most spacious Škoda','Premium interior','PHEV variant','Ideal for business'],de:['Geräumigstes Škoda','Premium-Interieur','PHEV-Variante','Ideal für Business']},
    cons:{cs:['Nejvyšší cena','Velké rozměry'],en:['Highest price','Large dimensions'],de:['Höchster Preis','Große Abmessungen']},
@@ -3682,7 +3242,7 @@ var MODELS=[
   ]},
   {name:'Epiq',variant:'(2025)',
    seg:{cs:'Mini elektrické SUV',en:'Mini electric SUV',de:'Mini-elektrisches SUV'},price:'od 599 900',
-   photo:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/2023_Skoda_Epiq_Concept_%28front%29.jpg/800px-2023_Skoda_Epiq_Concept_%28front%29.jpg',
+   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/2023_Skoda_Epiq_Concept_%28front%29.jpg?width=800',
    sc:{eco:10,tech:9,commute:10,'city-park':10,bev:10,'tech-int':9,auto:10,suv:8,standard:8,value:9,'t-small':10,exploring:10,'pass-rarely':8,'pass-weekly':7,'dist-low':10,'dist-mid':9,'prio-sprint':8,'prio-city':10,'ann-fuel':10,'ann-boring':10,'ann-tech':9,'dec-solo':8,'prio-eco':16,'prio-tech':14},
    pros:{cs:['Nejmenší elektrická Škoda','Perfektní pro město','Ekologická volba'],en:['Smallest electric Škoda','Perfect for city','Eco choice'],de:['Kleinstes elektrisches Škoda','Perfekt für die Stadt','Ökologisch']},
    cons:{cs:['Omezený dojezd','Přijde v roce 2025'],en:['Limited range','Coming in 2025'],de:['Begrenzte Reichweite','Kommt 2025']},
@@ -3720,9 +3280,28 @@ var sel={  'passengers':[],
 };
 STEPS.forEach(function(s){sel[s.id]=[];});
 
+// ── ANALYTIKA ─────────────────────────────────────────────────
+// Centrální bod pro sledování chování uživatelů (funnel: kde se appka
+// spouští, kde se odchází, co se vybírá). Zatím jen zapisuje do konzole
+// a do localStorage — až bude vybraný analytický nástroj (Google
+// Analytics, Plausible, Matomo…), doplňte volání níže.
+function trackEvent(name, data){
+  var ev={name:name, ts:new Date().toISOString(), lang:lang, data:data||{}};
+  console.log('[track]', ev);
+  try{
+    var log=JSON.parse(localStorage.getItem('simplySkodaEvents')||'[]');
+    log.push(ev);
+    localStorage.setItem('simplySkodaEvents', JSON.stringify(log));
+  }catch(e){}
+  // ── Napojení na reálný analytický nástroj ───────────────────
+  // if(window.gtag) gtag('event', name, data);
+  // if(window.plausible) plausible(name, {props:data});
+}
+
 // ── LANG ─────────────────────────────────────────────────────
 function setLang(l){
   lang=l;
+  document.documentElement.lang=l;
   document.querySelectorAll('.lb').forEach(function(b){
     b.classList.toggle('on', b.textContent.trim()===l.toUpperCase());
   });
@@ -3744,6 +3323,8 @@ function applyLang(){
            'bBack','rEy','rTi','vbLbl','revLbl','spTxt','spSub','shareH','shareP',
            'bShare','bRestart','bTD','crmSub','lName','lPhone','lEmail','lModel','lCity',
            'btnSub','okTitle','okText','dealerLbl','btnCopyDealer','btnShareDealer'];
+  var crmGdprEl=document.getElementById('crmGdpr');
+  if(crmGdprEl && L.crmNote!==undefined) crmGdprEl.innerHTML=L.crmNote;
   ids.forEach(function(id){
     var el=document.getElementById(id);
     if(el && L[id]!==undefined) el.innerHTML=L[id];
@@ -3810,6 +3391,7 @@ var EASY_STEPS=[
 ];
 
 function startEasy(){
+  trackEvent('mode_start',{mode:'easy'});
   easyCur=0; easySel={}; easyMode=true;
   show('pgEasy');
   renderEasyStep();
@@ -3860,6 +3442,7 @@ function easyNext(){
     if(el){el.classList.remove('shake');void el.offsetWidth;el.classList.add('shake');}
     return;
   }
+  trackEvent('step_complete',{mode:'easy',step:step.id,index:easyCur+1,total:5,selected:easySel[step.id]});
   if(easyCur<4){easyCur++;renderEasyStep();}
   else easyFinish();
 }
@@ -3900,6 +3483,7 @@ function easyFinish(){
 }
 
 function startConfig(){
+  trackEvent('mode_start',{mode:'full'});
   cur=0; freeText=''; surpriseA={};
   STEPS.forEach(function(s){sel[s.id]=[];});
   show('pgConfig');
@@ -4024,6 +3608,8 @@ function setPrompt(btn){
 }
 
 function next(){
+  var doneStep=STEPS[cur];
+  trackEvent('step_complete',{mode:'full',step:doneStep.id,index:cur+1,total:STEPS.length,selected:sel[doneStep.id]});
   if(cur===STEPS.length-1){runLoader();return;}
   cur++; renderStep(); window.scrollTo(0,0);
 }
@@ -4710,7 +4296,7 @@ function buildDealerSheet(ranked){
   if(has('auto','bev','phev')) specParts.push('DSG');
   lines.push('  Škoda '+m.name+' — '+m.variant);
   if(specParts.length>0) lines.push('  '+L('Konfigurace','Konfiguration','Config')+': '+specParts.join(', '));
-  lines.push('  '+L('Cena od','Preis ab','From')+': '+m.price+' Kč');
+  lines.push('  '+L('Cena od','Preis ab','From')+': '+m.price+' Kč '+L('(vč. DPH)','(inkl. MwSt.)','(incl. VAT)'));
   if(ranked.length>1) lines.push('  '+L('Alt.','Alt.','Alt.')+': '+ranked.slice(1).map(function(r){return 'Škoda '+r.name;}).join(' / '));
   lines.push('');
 
@@ -4987,7 +4573,7 @@ function selectTrim(btn, modelIdx, trimIdx){
   var recPrice = card.querySelector('.trim-rec-price');
   var recInc   = card.querySelector('.trim-rec-inc');
   if(recBadge) recBadge.textContent = t.n;
-  if(recPrice) recPrice.textContent = t.p+' Kč';
+  if(recPrice) recPrice.innerHTML = t.p+' Kč<span class="trim-rec-vat">'+(T[lang].vat||'')+'</span>';
   if(recInc)   recInc.textContent   = t.inc[lang]||t.inc.cs;
   // Rebuild other pills
   var othersEl = card.querySelector('.trim-others');
@@ -5634,6 +5220,7 @@ function buildUsedPanel(m, lang, showInfo, mi){
 function buildResults(){
   var ranked=MODELS.slice().sort(function(a,b){return score(b)-score(a);}).slice(0,3);
   window._lastRanked=ranked;
+  trackEvent('results_view',{mode:easyMode?'easy':'full',models:ranked.map(function(m){return m.name;})});
   var _vbEl=document.getElementById('vbTxt');
   if(visionSaved&&visionSaved.length>0){
     _vbEl.textContent=visionSaved;
@@ -5671,6 +5258,7 @@ function buildResults(){
         '<div class="mn">Škoda '+m.name+'</div>'+
         '<div class="mv">'+(rec&&rec.trim?rec.trim.n:m.variant)+'</div>'+
         '<div class="mseg">'+(m.seg[lang]||m.seg.cs)+'</div>'+
+        colourBadge()+
         '<div class="mreason">'+buildReason(m)+'</div>'+
         '<div class="mpros-wrap">'+
           '<div class="mpros-group">'+
@@ -5692,7 +5280,8 @@ function buildResults(){
         :
           '<div class="mprice"><span class="mfrom">'+T[lang].from+'</span>'+
           '<span class="mnum" id="mnum-'+mi+'">'+m.price+'</span>'+
-          '<span class="mcur">Kč</span></div>'
+          '<span class="mcur">Kč</span>'+
+          '<span class="mvat">'+(T[lang].vat||'')+'</span></div>'
         )+
         '<button class="btn-explore" onclick="openExplore('+mi+')">'+
           (T[lang].explBtn?T[lang].explBtn('Škoda '+m.name):'Prozkoumat Škoda '+m.name)+
@@ -5711,7 +5300,7 @@ function buildResults(){
             '<span class="trim-rec-badge">'+Lr('Doporučeno','Recommended','Empfohlen')+'</span>'+
             '<span class="trim-rec-name">'+t.n+'</span>'+
           '</div>'+
-          '<span class="trim-rec-price">'+t.p+' Kč</span>'+
+          '<span class="trim-rec-price">'+t.p+' Kč<span class="trim-rec-vat">'+(T[lang].vat||'')+'</span></span>'+
         '</div>'+
         '<div class="trim-rec-inc">'+(t.inc[lang]||t.inc.cs)+'</div>';
       if(m.trims.length>1){
@@ -5918,8 +5507,40 @@ function addCustomScen(){
 
 function submitCRM(){
   var name=document.getElementById('iName');
-  var phone=document.getElementById('iPhone');
   if(!name||!name.value.trim()){alert(lang==='cs'?'Zadejte prosím jméno':lang==='de'?'Bitte Namen eingeben':'Please enter your name');return;}
+  var consent=document.getElementById('crmConsent');
+  if(!consent||!consent.checked){alert((T[lang]||T.cs).crmConsentReq);return;}
+
+  var ranked=window._lastRanked||[];
+  var lead={
+    timestamp:new Date().toISOString(),
+    lang:lang,
+    name:name.value.trim(),
+    phone:(document.getElementById('iPhone')||{}).value||'',
+    email:(document.getElementById('iEmail')||{}).value||'',
+    model:(document.getElementById('iModel')||{}).value||'',
+    city:(document.getElementById('iCity')||{}).value||'',
+    note:(document.getElementById('iNote')||{}).value||'',
+    visionBrief:(document.getElementById('vbTxt')||{}).textContent||'',
+    recommendedModels:ranked.map(function(m){return m.name;}),
+    answers:sel
+  };
+
+  // Uložení leadu lokálně — demo/test režim bez backendu.
+  var leads=JSON.parse(localStorage.getItem('simplySkodaLeads')||'[]');
+  leads.push(lead);
+  localStorage.setItem('simplySkodaLeads',JSON.stringify(leads));
+  console.log('Simply Škoda — nový lead:',lead);
+  trackEvent('lead_submitted',{model:lead.model,city:lead.city,recommendedModels:lead.recommendedModels});
+
+  // ── Napojení na reálný CRM/dealer systém ────────────────────
+  // Až bude k dispozici endpoint, odkomentujte a doplňte URL:
+  // fetch('https://crm.skoda-auto.cz/api/leads',{
+  //   method:'POST',
+  //   headers:{'Content-Type':'application/json'},
+  //   body:JSON.stringify(lead)
+  // });
+
   document.getElementById('crmForm').style.display='none';
   document.getElementById('crmOk').style.display='block';
 }
