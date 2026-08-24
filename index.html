@@ -61,8 +61,8 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
 .hquote p{font-family:var(--serif);font-size:14px;font-style:italic;color:var(--t2);line-height:1.65}
 .btn-go{display:inline-flex;align-items:center;gap:10px;background:var(--gd);color:#fff;border:1.5px solid var(--gd);padding:13px 28px;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:.2s var(--ease)}
 .btn-go:hover{background:var(--green);transform:translateY(-1px)}
-.stats{display:flex;flex-shrink:0;border-top:2px solid var(--green);background:var(--white);width:100%}
-.stat{flex:1;padding:clamp(10px,1.5vh,18px) 0;text-align:center}
+.stats{display:flex;flex-shrink:0;border-top:2px solid var(--green);background:var(--white);width:100%;justify-content:center}
+.stat{flex:0 1 240px;padding:clamp(10px,1.5vh,18px) 0;text-align:center}
 .stat+.stat{border-left:1px solid var(--border)}
 .stat-n{font-family:var(--serif);font-size:clamp(22px,3vh,30px);color:var(--gd);line-height:1;margin-bottom:2px}
 .stat-l{font-size:11px;color:var(--t3)}
@@ -200,6 +200,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px
 }
 @media(max-width:540px){
   .grid,.stats{flex-direction:column}
+  .stat{flex:1}
   .stat+.stat{border-left:none;border-top:1px solid var(--border)}
 }
 
@@ -3121,7 +3122,7 @@ function colourBadge(){
 var MODELS=[
   {name:'Fabia',variant:'Active / Ambition / Monte Carlo',
    seg:{cs:'Malý hatchback',en:'Small hatchback',de:'Kleiner Hatchback'},price:'319 900',
-   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Skoda_Fabia_IV_IMG_3936.jpg?width=800',
+   photo:carPlaceholder('Fabia'),
    sc:{commute:10,'city-park':10,tight:10,parallel:9,'t-small':10,eco:9,petrol:9,mild:8,entry:10,standard:9,now:9,minimal:9,'no-issue':6,'pass-rarely':10,'pass-never':10,'dist-low':12,'dist-mid':8,'prio-sprint':6,'prio-city':12,'ann-boring':4,'ann-park':8,'dec-solo':8,'dec-open':6,'prio-eco':16,'prio-space':-8},
    pros:{cs:['Skvělá obratnost ve městě','Nízká spotřeba','Atraktivní cena'],en:['Great city maneuverability','Low fuel consumption','Attractive price'],de:['Tolle Wendigkeit','Niedriger Verbrauch','Attraktiver Preis']},
    cons:{cs:['Malý kufr 380 l','Pro rodinu s 2 dětmi může být těsné'],en:['Small 380 l boot','Can be tight for family with 2 kids'],de:['Kleiner 380-l-Kofferraum','Eng für Familie mit 2 Kindern']},
@@ -3134,7 +3135,7 @@ var MODELS=[
    specs:{engine:'1.0 TSI / 1.5 TSI',power:70,torque:160,consumption:'5.2 l/100km',boot:380,length:4108,seats:5}},
   {name:'Scala',variant:'Ambition / Style / Monte Carlo',
    seg:{cs:'Kompaktní hatchback',en:'Compact hatchback',de:'Kompakter Hatchback'},price:'399 900',
-   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Skoda_Scala_IMG_0166.jpg?width=800',
+   photo:carPlaceholder('Scala'),
    sc:{commute:9,social:9,tech:9,sporty:9,dynamic:8,'city-park':8,'t-small':8,'t-mid':7,auto:8,petrol:9,mild:8,standard:9,premium:8,'tech-int':8,neutral:8,'pass-rarely':8,'pass-weekly':6,'dist-low':10,'dist-mid':9,'prio-sprint':7,'prio-city':10,'ann-boring':8,'ann-noise':6,'dec-solo':7,'dec-partner':6,'prio-tech':10},
    pros:{cs:['Moderní design','Velký kufr pro tuto třídu','Sportovní charakter'],en:['Modern design','Large boot for class','Sporty character'],de:['Modernes Design','Großer Kofferraum','Sportlicher Charakter']},
    cons:{cs:['Bez dieselové varianty','Vyšší cena než Fabia'],en:['No diesel option','Higher price than Fabia'],de:['Kein Diesel','Höherer Preis als Fabia']},
@@ -3146,7 +3147,7 @@ var MODELS=[
   ]},
   {name:'Octavia',variant:'Ambition / Style / RS',
    seg:{cs:'Střední liftback',en:'Mid-size liftback',de:'Mittelklasse Liftback'},price:'579 900',
-   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Skoda_Octavia_IV_IMG_1855.jpg?width=800',
+   photo:carPlaceholder('Octavia'),
    sc:{work:10,commute:9,travel:9,elegant:9,classic:10,neutral:9,calm:9,safe:9,road:10,leather:8,phev:9,diesel:10,petrol:9,mild:9,standard:9,premium:8,value:10,entry:8,now:9,leasing:10,'t-mid':10,weekend:8,senior:7,'pass-weekly':8,'pass-daily':7,'dist-mid':9,'dist-high':10,'prio-range':10,'prio-comfort':9,'ann-noise':9,'ann-tech':8,'dec-partner':8,'dec-company':9,'prio-eco':10,'prio-tech':8},
    pros:{cs:['Nejprodávanější Škoda','Skvělý poměr cena výkon','Prostorný interiér'],en:['Best-selling Škoda','Excellent value','Spacious interior'],de:['Meistverkauftes Škoda','Ausgezeichnetes Preis-Leistungs-Verhältnis','Geräumig']},
    cons:{cs:['Nižší sed než SUV','Méně vizuálně výrazný'],en:['Lower seating than SUV','Less visually striking'],de:['Niedrigere Sitzposition als SUV','Optisch weniger auffällig']},
@@ -3158,7 +3159,7 @@ var MODELS=[
   ]},
   {name:'Octavia Combi',variant:'Style / Selection / Scout',
    seg:{cs:'Střední kombi',en:'Mid-size estate',de:'Mittelklasse Kombi'},price:'679 900',
-   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Skoda_Octavia_IV_Combi_IMG_1856.jpg?width=800',
+   photo:carPlaceholder('Octavia Combi'),
    sc:{family:10,work:10,travel:9,shopping:9,pets:8,everything:9,stroller:9,luggage:10,weekly:10,dog:8,calm:9,safe:9,road:10,classic:10,elegant:8,neutral:9,phev:9,diesel:10,petrol:9,mild:9,standard:9,value:10,now:9,leasing:10,'t-mid':10,'t-tow':8,longdrive:9,handyman:8,'pass-daily':10,'pass-weekly':9,'dist-high':10,'dist-mid':8,'prio-range':10,'ann-space':0,'ann-noise':8,'dec-partner':10,'dec-company':8,'prio-space':18},
    pros:{cs:['Kufr 640 l — největší ve třídě','4x4 Scout varianta','PHEV dostupný'],en:['640 l boot — class leading','4x4 Scout variant','PHEV available'],de:['640-l-Kofferraum','4x4 Scout-Variante','PHEV verfügbar']},
    cons:{cs:['Není SUV silueta','Méně vizuálně výrazný'],en:['Not an SUV silhouette','Less visually striking'],de:['Keine SUV-Silhouette','Optisch weniger auffällig']},
@@ -3170,7 +3171,7 @@ var MODELS=[
   ]},
   {name:'Kamiq',variant:'Active / Ambition / Style',
    seg:{cs:'Malé městské SUV',en:'Small urban SUV',de:'Kleines Stadt-SUV'},price:'399 900',
-   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/2021_Skoda_Kamiq_SE_L_1.0_Front.jpg?width=800',
+   photo:carPlaceholder('Kamiq'),
    sc:{commute:9,'city-park':10,tight:9,parallel:9,suv:8,safe:8,view:8,eco:8,'t-small':9,auto:9,petrol:9,mild:8,standard:9,value:8,entry:7,'pass-rarely':9,'pass-weekly':7,'dist-low':11,'dist-mid':8,'prio-city':11,'ann-park':9,'ann-boring':5,'dec-solo':8,'dec-partner':7,'prio-space':6,'prio-tech':8,'prio-eco':12},
    pros:{cs:['SUV silueta ve městě','Vysoký sed','Dobrá výbava za cenu'],en:['SUV silhouette in city','High seating position','Good equipment for price'],de:['SUV-Silhouette in der Stadt','Hohe Sitzposition','Gute Ausstattung']},
    cons:{cs:['Malý kufr 400 l','Bez pohonu 4x4'],en:['Small 400 l boot','No 4x4'],de:['Kleiner 400-l-Kofferraum','Kein 4x4']},
@@ -3182,7 +3183,7 @@ var MODELS=[
   ]},
   {name:'Karoq',variant:'Ambition / Style / Sportline',
    seg:{cs:'Kompaktní SUV',en:'Compact SUV',de:'Kompaktes SUV'},price:'629 900',
-   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Skoda_Karoq_IMG_2007.jpg?width=800',
+   photo:carPlaceholder('Karoq'),
    sc:{commute:9,social:9,suv:8,sporty:8,safe:8,'city-park':9,tech:9,view:8,eco:8,dynamic:8,'tech-int':9,leather:8,panorama:8,auto:9,petrol:9,phev:9,mild:8,standard:9,premium:8,value:9,'t-mid':9,now:9,leasing:9,'pass-weekly':9,'pass-daily':8,'dist-mid':9,'dist-high':8,'prio-range':8,'prio-comfort':8,'ann-noise':7,'ann-space':8,'dec-partner':9,'prio-space':12,'prio-tech':14,'prio-offroad':14},
    pros:{cs:['Kompaktní SUV s moderním designem','Vynikající technologie','5 hvězd Euro NCAP'],en:['Compact SUV with modern design','Excellent technology','5-star Euro NCAP'],de:['Kompaktes SUV','Ausgezeichnete Technologie','5-Sterne Euro NCAP']},
    cons:{cs:['Menší kufr než Kodiaq','Pouze 5 sedadel'],en:['Smaller boot than Kodiaq','Only 5 seats'],de:['Kleinerer Kofferraum als Kodiaq','Nur 5 Sitze']},
@@ -3194,7 +3195,7 @@ var MODELS=[
   ]},
   {name:'Kodiaq',variant:'Selection / Sportline / L&K',
    seg:{cs:'Velké SUV 7 míst',en:'Large SUV 7 seats',de:'Großes SUV 7 Sitze'},price:'949 900',
-   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Skoda_Kodiaq_II_front_20230813.jpg?width=800',
+   photo:carPlaceholder('Kodiaq'),
    sc:{family:10,nature:9,travel:9,pets:10,shopping:9,sport:8,everything:10,stroller:10,luggage:10,weekly:10,passengers:10,dog:10,safe:10,view:10,suv:10,leather:9,panorama:9,auto:10,phev:8,diesel:9,premium:10,top:10,'t-large':10,'t-awd':8,'t-tow':10,longdrive:8,handyman:10,'pass-daily':12,'pass-weekly':10,'dist-high':9,'dist-mid':8,'prio-range':9,'prio-comfort':10,'ann-space':0,'ann-noise':8,'dec-partner':12,'dec-company':7,'prio-space':22,'prio-offroad':16},
    pros:{cs:['Až 7 sedadel','Kufr 835 l v 5místné variantě','Tažné až 2500 kg'],en:['Up to 7 seats','835 l boot in 5-seat config','Tow up to 2500 kg'],de:['Bis 7 Sitze','835-l-Kofferraum','Anhängelast bis 2500 kg']},
    cons:{cs:['Velké rozměry — parkování','Vyšší cena'],en:['Large dimensions — tricky parking','Higher price'],de:['Große Abmessungen','Höherer Preis']},
@@ -3206,7 +3207,7 @@ var MODELS=[
   ]},
   {name:'Enyaq',variant:'60 / 85 / 85x / RS',
    seg:{cs:'Elektrické SUV',en:'Electric SUV',de:'Elektrisches SUV'},price:'899 900',
-   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Skoda_Enyaq_iV_IMG_9396.jpg?width=800',
+   photo:carPlaceholder('Enyaq'),
    sc:{eco:10,tech:10,social:9,commute:9,work:9,travel:8,suv:9,bev:10,'tech-int':10,'dark-int':9,leather:9,panorama:10,ambient:9,safe:9,view:9,calm:9,auto:10,premium:9,top:9,'t-mid':9,'t-large':8,'pass-weekly':8,'pass-daily':7,'dist-mid':10,'dist-high':8,'prio-comfort':10,'prio-range':6,'ann-fuel':12,'ann-tech':10,'ann-noise':10,'dec-partner':8,'dec-company':9,'prio-eco':20,'prio-tech':18,'prio-space':10},
    pros:{cs:['100% elektrický','Futuristický interiér','Panoramatická střecha','RS verze 299 koní'],en:['100% electric','Futuristic interior','Panoramic roof','RS version 299 hp'],de:['100% elektrisch','Futuristisches Interieur','Panoramadach','RS 299 PS']},
    cons:{cs:['Vyšší cena','Závisí na nabíjecí síti'],en:['Higher price','Dependent on charging network'],de:['Höherer Preis','Abhängigkeit vom Ladenetz']},
@@ -3218,7 +3219,7 @@ var MODELS=[
   ]},
   {name:'Elroq',variant:'50 / 85 / 85x / vRS',
    seg:{cs:'Kompaktní elektrické SUV',en:'Compact electric SUV',de:'Kompaktes elektrisches SUV'},price:'799 900',
-   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/2024_Skoda_Elroq_85_front_8.11.23.jpg?width=800',
+   photo:carPlaceholder('Elroq'),
    sc:{eco:10,tech:10,commute:9,social:9,suv:9,'city-park':8,bev:10,'tech-int':10,leather:8,panorama:8,ambient:8,safe:9,dynamic:9,auto:10,sporty:8,standard:8,premium:9,'t-mid':10,'pass-rarely':8,'pass-weekly':8,'dist-low':10,'dist-mid':10,'prio-sprint':9,'prio-city':9,'ann-fuel':12,'ann-tech':10,'ann-boring':8,'dec-solo':8,'dec-partner':8,'prio-eco':18,'prio-tech':16},
    pros:{cs:['Nový design Modern Solid','Kompaktnější než Enyaq','vRS verze 320 koní'],en:['New Modern Solid design','More compact than Enyaq','vRS 320 hp'],de:['Neues Modern-Solid-Design','Kompakter als Enyaq','vRS 320 PS']},
    cons:{cs:['Pouze elektrický','Menší kufr než Enyaq'],en:['Electric only','Smaller boot than Enyaq'],de:['Nur elektrisch','Kleinerer Kofferraum als Enyaq']},
@@ -3230,7 +3231,7 @@ var MODELS=[
   ]},
   {name:'Superb',variant:'Ambition / Style / L&K / plug-in hybrid',
    seg:{cs:'Velký liftback',en:'Large liftback',de:'Große Limousine'},price:'1 049 900',
-   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/Skoda_Superb_IV_front_20231017.jpg?width=800',
+   photo:carPlaceholder('Superb'),
    sc:{work:10,travel:10,social:10,leather:10,elegant:10,classic:10,calm:10,safe:9,road:10,tech:9,'dark-int':9,panorama:9,'warm-int':8,massage:9,ambient:9,auto:10,phev:10,diesel:10,top:10,premium:9,'t-large':10,leasing:10,longdrive:10,'pass-daily':10,'pass-weekly':9,'dist-high':12,'dist-vhigh':12,'prio-range':12,'prio-comfort':12,'ann-noise':12,'ann-tech':9,'ann-boring':8,'dec-partner':9,'dec-company':12,'prio-space':12,'prio-tech':8},
    pros:{cs:['Nejprostoranější Škoda','Prémiový interiér','PHEV varianta','Ideální pro business'],en:['Most spacious Škoda','Premium interior','PHEV variant','Ideal for business'],de:['Geräumigstes Škoda','Premium-Interieur','PHEV-Variante','Ideal für Business']},
    cons:{cs:['Nejvyšší cena','Velké rozměry'],en:['Highest price','Large dimensions'],de:['Höchster Preis','Große Abmessungen']},
@@ -3242,7 +3243,7 @@ var MODELS=[
   ]},
   {name:'Epiq',variant:'(2025)',
    seg:{cs:'Mini elektrické SUV',en:'Mini electric SUV',de:'Mini-elektrisches SUV'},price:'od 599 900',
-   photo:'https://commons.wikimedia.org/wiki/Special:FilePath/2023_Skoda_Epiq_Concept_%28front%29.jpg?width=800',
+   photo:carPlaceholder('Epiq'),
    sc:{eco:10,tech:9,commute:10,'city-park':10,bev:10,'tech-int':9,auto:10,suv:8,standard:8,value:9,'t-small':10,exploring:10,'pass-rarely':8,'pass-weekly':7,'dist-low':10,'dist-mid':9,'prio-sprint':8,'prio-city':10,'ann-fuel':10,'ann-boring':10,'ann-tech':9,'dec-solo':8,'prio-eco':16,'prio-tech':14},
    pros:{cs:['Nejmenší elektrická Škoda','Perfektní pro město','Ekologická volba'],en:['Smallest electric Škoda','Perfect for city','Eco choice'],de:['Kleinstes elektrisches Škoda','Perfekt für die Stadt','Ökologisch']},
    cons:{cs:['Omezený dojezd','Přijde v roce 2025'],en:['Limited range','Coming in 2025'],de:['Begrenzte Reichweite','Kommt 2025']},
@@ -5447,17 +5448,21 @@ function buildReason(m){
   return lang==='cs'?'Přirozeně odpovídá způsobu, jakým žijete':lang==='de'?'Entspricht natürlich Ihrer Lebensweise':'Naturally matches the way you live';
 }
 
+function carPlaceholder(name){
+  var svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">'+
+    '<rect width="400" height="200" fill="#eef6f1"/>'+
+    '<rect x="150" y="78" width="100" height="30" rx="10" fill="#0e3a2f" opacity="0.14"/>'+
+    '<rect x="168" y="66" width="64" height="24" rx="8" fill="#0e3a2f" opacity="0.14"/>'+
+    '<circle cx="168" cy="110" r="10" fill="#0e3a2f" opacity="0.22"/>'+
+    '<circle cx="232" cy="110" r="10" fill="#0e3a2f" opacity="0.22"/>'+
+    '<text x="200" y="146" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="18" fill="#0e3a2f">Škoda '+name+'</text>'+
+    '<text x="200" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" letter-spacing="2" fill="#8a8880">FOTOGRAFIE BRZY K DISPOZICI</text>'+
+    '</svg>';
+  return 'data:image/svg+xml,'+encodeURIComponent(svg);
+}
 function imgErr(img){
-  // Wikimedia fallback — zkusit přímo commons URL
-  if(!img.dataset.retried){
-    img.dataset.retried='1';
-    var s=img.src;
-    var m=s.match(/\/([^/]+\.jpg)$/);
-    if(m) { img.src='https://commons.wikimedia.org/wiki/Special:FilePath/'+m[1]+'?width=600'; return; }
-  }
-  // SVG car placeholder
   var n=(img.alt||'').replace('Škoda ','');
-  img.src='data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect width="400" height="200" fill="%23f5f4f0"/><text x="200" y="90" text-anchor="middle" font-family="sans-serif" font-size="13" fill="%23bbb">Škoda '+n+'</text><text x="200" y="112" text-anchor="middle" font-family="sans-serif" font-size="11" fill="%23ccc">foto brzy k dispozici</text></svg>');
+  img.src=carPlaceholder(n);
 }
 function openCRM(){
   buildScenarios();
